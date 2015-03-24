@@ -29,7 +29,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     
     //color
     var selectedcolor:String!
-    let pickerColor = ["Red","Yellow", "Blue"]
+    let pickerColor = ["Red","Yellow", "Blue", "Orange", "Teal", "Green"]
     @IBAction func btnLoad(sender: UIButton) {
         var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
         
@@ -67,7 +67,12 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         defaults.synchronize()
     }
     
+
+    
+    
     //Needed for picker
+    //Save as a snipit
+    
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -80,6 +85,11 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         return pickerColor[row]
        
     }
+
+    
+    
+    
+    
     //new method hiding keyboard
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         view.endEditing(true)
